@@ -1,0 +1,69 @@
+<h1>Listing lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Item1</th>
+      <th>Item2</th>
+      <th>Item3</th>
+      <th>Item4</th>
+      <th>Item5</th>
+      <th>Item6</th>
+      <th>Item7</th>
+      <th>Item8</th>
+      <th>Item9</th>
+      <th>Item10</th>
+      <th>Item11</th>
+      <th>Item12</th>
+      <th>Item13</th>
+      <th>Item14</th>
+      <th>Item15</th>
+      <th>Item16</th>
+      <th>Item17</th>
+      <th>Item18</th>
+      <th>Item19</th>
+      <th>Item20</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.title %></td>
+        <td><%= list.item1 %></td>
+        <td><%= list.item2 %></td>
+        <td><%= list.item3 %></td>
+        <td><%= list.item4 %></td>
+        <td><%= list.item5 %></td>
+        <td><%= list.item6 %></td>
+        <td><%= list.item7 %></td>
+        <td><%= list.item8 %></td>
+        <td><%= list.item9 %></td>
+        <td><%= list.item10 %></td>
+        <td><%= list.item11 %></td>
+        <td><%= list.item12 %></td>
+        <td><%= list.item13 %></td>
+        <td><%= list.item14 %></td>
+        <td><%= list.item15 %></td>
+        <td><%= list.item16 %></td>
+        <td><%= list.item17 %></td>
+        <td><%= list.item18 %></td>
+        <td><%= list.item19 %></td>
+        <td><%= list.item20 %></td>
+        <td><%= list.user %></td>
+        <td><%= link_to 'Show', list %></td>
+        <td><%= link_to 'Edit', edit_list_path(list) %></td>
+        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List', new_list_path %>

@@ -11,9 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140911233332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lists", force: true do |t|
+    t.string   "title"
+    t.boolean  "item1"
+    t.boolean  "item2"
+    t.boolean  "item3"
+    t.boolean  "item4"
+    t.boolean  "item5"
+    t.boolean  "item6"
+    t.boolean  "item7"
+    t.boolean  "item8"
+    t.boolean  "item9"
+    t.boolean  "item10"
+    t.boolean  "item11"
+    t.boolean  "item12"
+    t.boolean  "item13"
+    t.boolean  "item14"
+    t.boolean  "item15"
+    t.boolean  "item16"
+    t.boolean  "item17"
+    t.boolean  "item18"
+    t.boolean  "item19"
+    t.boolean  "item20"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

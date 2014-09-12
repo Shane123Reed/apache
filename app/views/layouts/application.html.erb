@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Apache</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+       <title>Apache</title>
+       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+       <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+     <div class="container">
+       <%= yield %>
+     </div>
 
 </body>
+
+<script type="text/javascript">
+     $(function(){
+          $('.field').click(function() {
+               if ($('.check').attr('checked') == 'checked' ) {
+                    $(this).children('.check').removeAttr('checked');
+                    $(this).toggleClass( "blue" );
+               } else {
+                    $(this).children('.check').attr('checked', 'checked');
+
+                    $(this).toggleClass( "blue" );
+               }
+          });
+
+
+
+     });
+</script>
 </html>
+

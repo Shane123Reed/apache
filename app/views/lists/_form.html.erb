@@ -1,0 +1,58 @@
+<%= form_for(@list) do |f| %>
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% @list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, placeholder: 'Job & Job Number' %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item1, class: 'check' %><h1>Save Project Before Starting</h1>
+  </div>
+  
+  <div class="field">
+    <%= f.check_box :item2, class: 'check' %><h1>Check Color Space</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item3, class: 'check' %><h1>Check Grades across project</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item4, class: 'check' %><h1>Check Handles / Track Windows if any</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item5, class: 'check' %><h1>Check Delivery Specs/Go Through Render Settings</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item6, class: 'check' %><h1>Render Shots</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item7, class: 'check' %><h1>QC Renders by Reconforming with EDL in a new DaVinci project</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item8, class: 'check' %><h1>Export Drp file onto the server. “Job#_JobName_Graded_Date"</h1>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :item9, class: 'check' %><h1>Place Renders on Transport Drive & Server</h1>
+  </div>  
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
