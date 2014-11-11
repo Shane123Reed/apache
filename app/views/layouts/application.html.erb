@@ -7,6 +7,14 @@
        <%= csrf_meta_tags %>
 </head>
 <body>
+     <nav>
+          <img src="http://www.apache.tv/wp-content/uploads/2014/06/Apache_logo@2x.png" class="nav-img" />
+          <% if current_user %>
+
+               <div class="signed-in"><div class="text"><%= current_user.email %></div></div>
+          <% end %>
+     </nav>
+     
      <div class="container">
        <%= yield %>
      </div>
@@ -15,13 +23,10 @@
 
 <script type="text/javascript">
      $(function(){
-          $('.field').click(function() {
-               if ($('.check').attr('checked') == 'checked' ) {
-                    $(this).children('.check').removeAttr('checked');
+          $('body').on("click", '.field', function() {
+               if ( $('.check').is(':checked') ) {
                     $(this).toggleClass( "blue" );
                } else {
-                    $(this).children('.check').attr('checked', 'checked');
-
                     $(this).toggleClass( "blue" );
                }
           });

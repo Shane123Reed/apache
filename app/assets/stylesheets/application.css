@@ -12,10 +12,49 @@
  *= require_tree .
  */
 
+body {
+    margin: 0;
+}
+
 .container {
   width: 700px;
   position: relative;
   margin: 0 auto;
+/*  background-color: pink;*/
+}
+
+.signed-in {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(230,230,230);
+  font-family: Futura;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: gray;
+  font-size: 10px;
+  text-align: center;
+  margin: 0;
+  border: 0;
+}
+
+.text {
+  font-family: Futura;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: white;
+  line-height: 20px;
+  font-size: 20px;
+  padding-top: 15px;
+}
+
+nav img {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  float: left;
 }
 
 h1 {
@@ -28,8 +67,11 @@ h1 {
 
 .field {
   width: 100%;
-  height: 100%;
+  height: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
   text-align: justify;
+  background-color: rgb(230,230,230);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -40,17 +82,21 @@ h1 {
 
 .blue {
   background-color: rgb(50, 200, 50);
+  color: white;
 }
 
-.field input {
+input {
   text-transform: uppercase;
-  padding-left: 20px;
   font-family: Futura;
   letter-spacing: 2px;
   width: 100%;
-  height: 30px;
-  border: none;
-  background-color: rgb(230, 230, 230);
+  height: 68px;
+  padding-left: 20px;
+  position: relative;
+  margin-top: -20px;
+  left: -20px;
+  border: 2px solid rgb(230,230,230);
+
   text-decoration: none;
 }
 
